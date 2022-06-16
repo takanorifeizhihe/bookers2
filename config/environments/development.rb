@@ -76,4 +76,6 @@ Rails.application.configure do
   
   #DNSリバインディング攻撃からの保護設定のためホスト許可設定の記述追加
   config.hosts << "37f0838d05fd4a4f9425f87707ddbdf8.vfs.cloud9.us-east-1.amazonaws.com"
+  
+  config.active_job.queue_adapter = :inline
 end

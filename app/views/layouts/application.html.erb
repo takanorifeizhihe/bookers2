@@ -7,74 +7,70 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
-      <nav class="bavbar bavbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-          <a class="navbar-brand" href="/">
-            <span>Bookers</span>
-          </a>
-          
-          <div class="navbar-collapse collapse show" id="navbarNavbarDropdown" style>
-            <ul class="navbar-nav ml-auto">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="/"><span>Bookers</span></a>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
             <li>
-              <%= link_to new_user_session_path do %>
+              <%= link_to new_user_session_path,class:'nav-link text-light' do %>
               <i class="fas fa-home"></i>
               <span>Home</span>
               <% end %>
             </li>
             <li>
-              <%= link_to user_session_path do %>
+              <%= link_to users_path,class:'nav-link text-light' do %>
               <i class="fas fa-users"></i>
               <span>Users</span>
               <% end %>
             </li>
             <li>
-              <%= link_to books_path do %>
+              <%= link_to books_path,class:'nav-link text-light' do %>
               <i class="fas fa-book-open"></i>
               <span>Books</span>
               <% end %>
             </li>
             <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
+              <%= link_to destroy_user_session_path, method: :delete,class:'nav-link text-light' do %>
               <i class="fas fa-sign-out-alt"></i>
               <span>Log out</span>
               <% end %>
             </li>
             <% else %>
             <li>
-              <%= link_to new_user_session_path do %>
+              <%= link_to new_user_session_path,class:'nav-link text-light' do %>
               <i class="fas fa-home"></i>
               <span>Home</span>
               <% end %>
             </li>
             <li>
-              <%= link_to home_about_path do %>
+              <%= link_to home_about_path,class:'nav-link text-light' do %>
               <i class="fas fa-link"></i>
               <span>About</span>
               <% end %>
             </li>
             <li>
-              <%= link_to new_user_registration_path do %>
+              <%= link_to new_user_registration_path,class:'nav-link text-light' do %>
               <i class="fas fa-user-plus"></i>
               <span>Sign up</span>
               <% end %>
             </li>
             <li>
-              <%= link_to new_user_session_path do %>
+              <%= link_to new_user_session_path,class:'nav-link text-light' do %>
               <i class="fas fa-sign-in"></i>
               <span>Sign in</span>
               <% end %>
             </li>
             <% end %>
-            </ul>
-          </div>
+          </ul>
         </div>
+      </div>
       </nav>
     </header>
     
@@ -93,5 +89,8 @@
         </div>
       </div>
     </footer>
+    
+   
+    
   </body>
 </html>
