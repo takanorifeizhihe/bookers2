@@ -8,8 +8,6 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    @user.update(user_params)
-    redirect_to current_user_path(@user.id) 
   end
   
   def update
